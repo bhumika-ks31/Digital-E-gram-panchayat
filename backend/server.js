@@ -16,18 +16,26 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middleware
-app.use(cors({ origin: "http://localhost:5173" }));
+// -------------------- MIDDLEWARE --------------------
+
+// CORS: allow deployed frontend + localhost
+app.use(cors({
+  origin: [
+    "http://localhost:5173", // dev
+    "https://digital-e-gram-panchayat-dvpl.onrender.com" // deployed frontend
+  ]
+}));
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use("/public", express.static(path.join(__dirname, "public"))); // serve static files
 
-// MongoDB Connection
+// -------------------- MONGODB CONNECTION --------------------
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected ✅"))
   .catch(err => console.error("MongoDB connection error ❌", err));
 
-// -------------------- Schemas --------------------
+// -------------------- SCHEMAS --------------------
 
 // Application Schema
 const applicationSchema = new mongoose.Schema({
@@ -47,7 +55,7 @@ const certificateSchema = new mongoose.Schema({
 });
 const Certificate = mongoose.model("Certificate", certificateSchema);
 
-// -------------------- Routes --------------------
+// -------------------- ROUTES --------------------
 
 // Submit new application
 app.post("/api/application", async (req, res) => {
@@ -135,6 +143,6 @@ app.post("/api/certificate/:applicationId", async (req, res) => {
   doc.end();
 });
 
-// -------------------- Start Server --------------------
+// -------------------- START SERVER --------------------
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
