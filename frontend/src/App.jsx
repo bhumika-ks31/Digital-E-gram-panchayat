@@ -2,15 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import Notices from "./pages/Notices";
-import Dashboard from "./pages/Dashboard";   
-import Register from "./pages/Register";
-import ServiceDetail from "./pages/ServiceDetail";
+import Home from '@Pages/Home'
+import About from '@Pages/About'
+import Services from '@Pages/Services'
+import Contact from '@Pages/Contact'
+import Notices from '@Pages/Notices'
+import Login from '@Pages/Dashboard'
+import Register from '@Pages/Register'
+import ServiceDetail from '@Pages/ServiceDetail'
 
 function App() {
   return (
