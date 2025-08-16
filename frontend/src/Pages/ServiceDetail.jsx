@@ -31,11 +31,15 @@ const ServiceDetail = () => {
       // Remove base64 logo, backend will use static image
       const dataToSend = { ...formData, serviceName: serviceId.replace("-", " ").toUpperCase() };
 
-      const res = await fetch(`http://localhost:5000/api/certificate/${serviceId}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataToSend),
-      });
+     const res = await fetch(
+  `https://digital-e-gram-panchayat1.onrender.com/api/certificate/${serviceId}`, 
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dataToSend),
+  }
+);
+
 
       if (!res.ok) throw new Error("Failed to fetch");
 
