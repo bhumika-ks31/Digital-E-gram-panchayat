@@ -8,7 +8,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Notices from "./pages/Notices";
-import Login from "./pages/Dashboard";   // 👈 fixed (was Dashboard, using as Login)
+import Dashboard from "./pages/Dashboard";   
 import Register from "./pages/Register";
 import ServiceDetail from "./pages/ServiceDetail";
 
