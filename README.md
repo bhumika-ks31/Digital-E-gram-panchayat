@@ -4,6 +4,7 @@
 **Digital-E Gram Panchayat** is a user-friendly, web-based platform that empowers citizens to apply for and download official panchayat documents—like birth certificates—in PDF format. Our goal is to bring transparency, ease, and digital access to essential village governance services.
 
 ---
+🔗 **Live App:** [Operation Scheduler](https://digital-e-gram-panchayat-dvpl.onrender.com)  
 
 ##  Watch the Demo  
 Check out this quick demo video to see the platform in action:  
